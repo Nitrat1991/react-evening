@@ -1,10 +1,10 @@
 import React from 'react';
-import './app.scss';
+import './app.sass';
 
-const App = () => {
+const App = (props) => {
     return (
         <div className="app">
-            React work
+            {props.tab}
         </div>
     );
 };

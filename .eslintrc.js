@@ -1,9 +1,9 @@
-{
-    "env": {
+module.exports = {
+    env: {
         "browser": true,
         "es2021": true
     },
-    "extends": [
+    extends: [
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "airbnb",
@@ -11,19 +11,19 @@
         "stylelint-config-standard",
         "stylelint-config-prettier"
     ],
-    "parserOptions": {
+    parserOptions: {
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": [
+    plugins: [
         "react"
     ],
-    "rules": {
+    rules: {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "quotes": ["error", "single"],
         "indent": ["error", "tab"]
     }
-}
+};
