@@ -2,6 +2,7 @@
   "name": "my",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,6 +33,7 @@
     "husky": "^8.0.1",
     "less-loader": "^11.0.0",
     "lint-staged": "^13.0.3",
+    "node-sass": "^7.0.1",
     "prettier": "^2.7.1",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.0",
