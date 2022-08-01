@@ -1,10 +1,10 @@
 import React from 'react';
-import './app.sass';
+import AppHeader from "../appHeader/AppHeader.jsx";
 
-const App = (props) => {
+const App = () => {
     return (
         <div className="app">
-            {props.tab}
+            <AppHeader/>
         </div>
     );
 };
