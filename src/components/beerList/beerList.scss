@@ -1,6 +1,6 @@
-@import '../style/variables.scss';
+@import '../../style/variables.scss';
 
-.char {
+.beer {
     &__content {
         margin-top: 50px;
         display: grid;
@@ -45,4 +45,12 @@
         text-transform: uppercase;
         color: #fff;
     }
+    &__list {
+        &__btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    }
+    
 }

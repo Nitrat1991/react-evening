@@ -1,9 +1,10 @@
-@import '../style/variables.scss';
+@import '../../style/variables.scss';
 
 .app {
     &__header {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 20px;
     }
     &__title {
         font-weight: bold;

@@ -1,7 +1,7 @@
 class PunkService {
     _apiBase = 'https://api.punkapi.com/v2/';
     _page = 1;
-    _perPage = 9;
+    _perPage = 45;
 
     getResource = async (url) => {
         let res = await fetch(url);

@@ -1,7 +1,7 @@
 @import './variables';
 
 .button {
-    min-width: 101px;
+    min-width: 50px;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -12,8 +12,8 @@
     cursor: pointer;
     &__long {
         display: block;
-        width: 170px;
-        margin: 45px auto 0 auto;
+        width: 30px;
+        margin: 5px;
     }
     .inner {
         position: relative;
