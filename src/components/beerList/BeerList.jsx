@@ -11,6 +11,7 @@ class BeerList extends Component {
         page: 1,
         beerEnded: false,
         nmbList: 1,
+        nmbBtns: 0
     }
 
     punkService = new PunkService();
@@ -53,12 +54,36 @@ class BeerList extends Component {
             beerList: [...arrNewbeerList],
             beerEnded: ended,
             nmbList: nmbList,
+            nmbBtns: arrNewbeerList.length,
         }))
+    }
+
+    renderButtons = (nmbBtns) => {
+        const arrBtns = () => {
+            const res = [];
+            for (let i = 0; i < nmbBtns; i++) {                
+                res.push(
+                    <button className="button button__main button__long"
+                    key={i}                   
+                    onClick={() => this.onPagination(i)}>
+                        <div className="inner">{i + 1}</div>
+                    </button>
+                );
+            }
+            return res;
+        }
+
+        const buttons = arrBtns();
+        
+        return (
+            <div className="beer__list__btn">
+                {buttons}
+            </div>
+        )
     }
 
 
     renderItems(arr, nmbList = 0) {
-        console.log(nmbList);
         if (nmbList < arr.length) {
             const items =  arr[nmbList].map((item) => {
                 return (
@@ -86,9 +111,10 @@ class BeerList extends Component {
     }
 
     render() {
-        const {beerList, beerEnded , nmbList} = this.state;
+        const {beerList, nmbList, nmbBtns} = this.state;
         
         const items = this.renderItems(beerList, nmbList);
+        const buttons = this.renderButtons(nmbBtns);
 
         const content = items;
 
@@ -96,38 +122,7 @@ class BeerList extends Component {
             <div className="beer__list">
                 <BeerFilters/>
                 {content}
-                <div className='beer__list__btn'>
-                    <button
-                        className="button button__main button__long"
-                        style={{'display': beerEnded ? 'none' : 'block'}}
-                        onClick={() => this.onPagination(0)}>
-                        <div className="inner">1</div>
-                    </button>
-                    <button
-                        className="button button__main button__long"
-                        style={{'display': beerEnded ? 'none' : 'block'}}
-                        onClick={() => this.onPagination(1)}>
-                        <div className="inner">2</div>
-                    </button>
-                    <button
-                        className="button button__main button__long"
-                        style={{'display': beerEnded ? 'none' : 'block'}}
-                        onClick={() => this.onPagination(2)}>
-                        <div className="inner">3</div>
-                    </button>
-                    <button
-                        className="button button__main button__long"
-                        style={{'display': beerEnded ? 'none' : 'block'}}
-                        onClick={() => this.onPagination(3)}>
-                        <div className="inner">4</div>
-                    </button>
-                    <button
-                        className="button button__main button__long"
-                        style={{'display': beerEnded ? 'none' : 'block'}}
-                        onClick={() => this.onPagination(4)}>
-                        <div className="inner">5</div>
-                    </button>
-                </div>
+                {buttons}
             </div>
         )
     }
